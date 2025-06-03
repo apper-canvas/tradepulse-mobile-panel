@@ -482,8 +482,8 @@ if (loading) {
                 `${orderType} ${selectedStock?.symbol || 'Select Stock'}`
               )}
             </motion.button>
-          </div>
 </div>
+        </div>
 
         {/* Chart Timeframes */}
         <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700 p-4 sm:p-6">
@@ -503,19 +503,18 @@ if (loading) {
               </button>
             ))}
           </div>
-</div>
-          
-          {selectedStock ? (
+{selectedStock ? (
             <div className="aspect-video bg-surface-50 dark:bg-surface-700 rounded-lg flex items-center justify-center overflow-hidden">
               <div className="text-center p-4">
                 <ApperIcon name="BarChart3" className="h-8 w-8 sm:h-12 sm:w-12 text-surface-300 mx-auto mb-2" />
                 <p className="text-sm sm:text-base text-surface-500 dark:text-surface-400">
                   Chart for {selectedStock.symbol}
+                </p>
                 <p className="text-xs text-surface-400 dark:text-surface-500">
                   Timeframe: {selectedTimeframe}
                 </p>
               </div>
-</div>
+            </div>
           ) : (
             <div className="aspect-video bg-surface-50 dark:bg-surface-700 rounded-lg flex items-center justify-center overflow-hidden">
               <p className="text-sm sm:text-base text-surface-500 dark:text-surface-400 text-center p-4">Select a stock to view chart</p>
