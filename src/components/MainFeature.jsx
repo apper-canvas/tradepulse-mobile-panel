@@ -332,12 +332,26 @@ if (loading) {
                         </div>
                       </motion.div>
                     ))}
-                  </div>
+</div>
                 )}
                 </motion.div>
               )}
-</AnimatePresence>
-          </div>
+
+            {activeTab === 'positions' && (
+              <motion.div
+                key="positions"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="space-y-2"
+              >
+                <div className="text-center py-8">
+                  <ApperIcon name="TrendingUp" className="h-12 w-12 text-surface-300 mx-auto mb-4" />
+                  <p className="text-surface-500 dark:text-surface-400">No positions held</p>
+                </div>
+</motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
