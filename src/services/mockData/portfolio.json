@@ -1,0 +1,56 @@
+[
+  {
+    "portfolioId": 1,
+    "userId": 1,
+    "holdings": [
+      {
+        "symbol": "RELIANCE",
+        "quantity": 50,
+        "avgPrice": 2480.50,
+        "currentPrice": 2520.75,
+        "pnl": 2012.50,
+        "pnlPercent": 1.62
+      },
+      {
+        "symbol": "TCS",
+        "quantity": 25,
+        "avgPrice": 3650.00,
+        "currentPrice": 3725.80,
+        "pnl": 1895.00,
+        "pnlPercent": 2.08
+      },
+      {
+        "symbol": "INFY",
+        "quantity": 40,
+        "avgPrice": 1455.25,
+        "currentPrice": 1478.90,
+        "pnl": 946.00,
+        "pnlPercent": 1.62
+      },
+      {
+        "symbol": "HDFC",
+        "quantity": 30,
+        "avgPrice": 2750.00,
+        "currentPrice": 2695.50,
+        "pnl": -1635.00,
+        "pnlPercent": -1.98
+      }
+    ],
+    "positions": [
+      {
+        "symbol": "NIFTY23DEC19500CE",
+        "quantity": 100,
+        "avgPrice": 145.50,
+        "currentPrice": 158.75,
+        "pnl": 1325.00,
+        "pnlPercent": 9.11
+      }
+    ],
+    "totalValue": 485750.25,
+    "dayPL": 4850.75,
+    "overallPL": 38250.90,
+    "investedAmount": 447499.35,
+    "availableMargin": 125000.00,
+    "usedMargin": 75000.00
+  }
+]

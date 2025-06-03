@@ -1,0 +1,31 @@
+[
+  {
+    "watchlistId": 1,
+    "name": "My Watchlist",
+    "symbols": ["RELIANCE", "TCS", "INFY", "HDFC", "ICICIBANK", "WIPRO", "LT", "HCLTECH", "AXISBANK", "MARUTI"],
+    "alerts": [
+      {
+        "symbol": "RELIANCE",
+        "type": "PRICE_ABOVE",
+        "value": 2600,
+        "active": true
+      },
+      {
+        "symbol": "TCS",
+        "type": "PRICE_BELOW",
+        "value": 3500,
+        "active": true
+      }
+    ],
+    "sortOrder": 1,
+    "createdAt": "2023-12-01T00:00:00.000Z"
+  },
+  {
+    "watchlistId": 2,
+    "name": "Banking Stocks",
+    "symbols": ["HDFC", "ICICIBANK", "AXISBANK", "SBIN", "KOTAKBANK", "INDUSINDBK"],
+    "alerts": [],
+    "sortOrder": 2,
+    "createdAt": "2023-12-15T00:00:00.000Z"
+  }
+]

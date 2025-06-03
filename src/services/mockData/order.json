@@ -1,0 +1,52 @@
+[
+  {
+    "orderId": 1701234567890,
+    "symbol": "RELIANCE",
+    "orderType": "BUY",
+    "quantity": 10,
+    "price": 2520.75,
+    "status": "EXECUTED",
+    "timestamp": "2023-12-28T10:30:00.000Z",
+    "tradeType": "MARKET"
+  },
+  {
+    "orderId": 1701234567891,
+    "symbol": "TCS",
+    "orderType": "SELL",
+    "quantity": 5,
+    "price": 3725.00,
+    "status": "PENDING",
+    "timestamp": "2023-12-28T11:15:00.000Z",
+    "tradeType": "LIMIT"
+  },
+  {
+    "orderId": 1701234567892,
+    "symbol": "INFY",
+    "orderType": "BUY",
+    "quantity": 20,
+    "price": 1478.90,
+    "status": "EXECUTED",
+    "timestamp": "2023-12-28T09:45:00.000Z",
+    "tradeType": "MARKET"
+  },
+  {
+    "orderId": 1701234567893,
+    "symbol": "HDFC",
+    "orderType": "SELL",
+    "quantity": 10,
+    "price": 2700.00,
+    "status": "CANCELLED",
+    "timestamp": "2023-12-27T15:20:00.000Z",
+    "tradeType": "LIMIT"
+  },
+  {
+    "orderId": 1701234567894,
+    "symbol": "ICICIBANK",
+    "orderType": "BUY",
+    "quantity": 15,
+    "price": 985.50,
+    "status": "EXECUTED",
+    "timestamp": "2023-12-27T14:10:00.000Z",
+    "tradeType": "MARKET"
+  }
+]

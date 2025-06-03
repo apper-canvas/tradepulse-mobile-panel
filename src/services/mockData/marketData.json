@@ -1,0 +1,317 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "ltp": 2520.75,
+    "change": 12.50,
+    "volume": 2845620,
+    "bidAsk": {
+      "bid": 2520.50,
+      "ask": 2521.00,
+      "bidQty": 150,
+      "askQty": 200
+    },
+    "ohlc": {
+      "open": 2508.25,
+      "high": 2525.80,
+      "low": 2505.90,
+      "close": 2508.25
+    },
+    "marketCap": 17058000000000,
+    "pe": 24.5,
+    "sector": "Energy"
+  },
+  {
+    "symbol": "TCS",
+    "ltp": 3725.80,
+    "change": -15.20,
+    "volume": 1234567,
+    "bidAsk": {
+      "bid": 3725.50,
+      "ask": 3726.00,
+      "bidQty": 100,
+      "askQty": 125
+    },
+    "ohlc": {
+      "open": 3741.00,
+      "high": 3748.50,
+      "low": 3720.00,
+      "close": 3741.00
+    },
+    "marketCap": 13650000000000,
+    "pe": 28.2,
+    "sector": "IT"
+  },
+  {
+    "symbol": "INFY",
+    "ltp": 1478.90,
+    "change": 8.75,
+    "volume": 3456789,
+    "bidAsk": {
+      "bid": 1478.70,
+      "ask": 1479.10,
+      "bidQty": 200,
+      "askQty": 180
+    },
+    "ohlc": {
+      "open": 1470.15,
+      "high": 1482.50,
+      "low": 1468.00,
+      "close": 1470.15
+    },
+    "marketCap": 6250000000000,
+    "pe": 26.8,
+    "sector": "IT"
+  },
+  {
+    "symbol": "HDFC",
+    "ltp": 2695.50,
+    "change": -25.40,
+    "volume": 1876543,
+    "bidAsk": {
+      "bid": 2695.25,
+      "ask": 2695.75,
+      "bidQty": 75,
+      "askQty": 100
+    },
+    "ohlc": {
+      "open": 2720.90,
+      "high": 2725.00,
+      "low": 2690.00,
+      "close": 2720.90
+    },
+    "marketCap": 14850000000000,
+    "pe": 19.5,
+    "sector": "Banking"
+  },
+  {
+    "symbol": "ICICIBANK",
+    "ltp": 985.50,
+    "change": 5.25,
+    "volume": 4567890,
+    "bidAsk": {
+      "bid": 985.25,
+      "ask": 985.75,
+      "bidQty": 300,
+      "askQty": 250
+    },
+    "ohlc": {
+      "open": 980.25,
+      "high": 988.00,
+      "low": 978.50,
+      "close": 980.25
+    },
+    "marketCap": 6900000000000,
+    "pe": 15.2,
+    "sector": "Banking"
+  },
+  {
+    "symbol": "WIPRO",
+    "ltp": 425.75,
+    "change": -2.15,
+    "volume": 2345678,
+    "bidAsk": {
+      "bid": 425.50,
+      "ask": 426.00,
+      "bidQty": 400,
+      "askQty": 350
+    },
+    "ohlc": {
+      "open": 427.90,
+      "high": 430.50,
+      "low": 424.00,
+      "close": 427.90
+    },
+    "marketCap": 2350000000000,
+    "pe": 22.1,
+    "sector": "IT"
+  },
+  {
+    "symbol": "LT",
+    "ltp": 2890.25,
+    "change": 18.90,
+    "volume": 876543,
+    "bidAsk": {
+      "bid": 2890.00,
+      "ask": 2890.50,
+      "bidQty": 80,
+      "askQty": 90
+    },
+    "ohlc": {
+      "open": 2871.35,
+      "high": 2895.00,
+      "low": 2868.50,
+      "close": 2871.35
+    },
+    "marketCap": 4050000000000,
+    "pe": 16.8,
+    "sector": "Infrastructure"
+  },
+  {
+    "symbol": "HCLTECH",
+    "ltp": 1235.60,
+    "change": 12.40,
+    "volume": 1654321,
+    "bidAsk": {
+      "bid": 1235.40,
+      "ask": 1235.80,
+      "bidQty": 150,
+      "askQty": 120
+    },
+    "ohlc": {
+      "open": 1223.20,
+      "high": 1238.50,
+      "low": 1220.00,
+      "close": 1223.20
+    },
+    "marketCap": 3350000000000,
+    "pe": 24.5,
+    "sector": "IT"
+  },
+  {
+    "symbol": "AXISBANK",
+    "ltp": 1075.80,
+    "change": -8.45,
+    "volume": 3210987,
+    "bidAsk": {
+      "bid": 1075.60,
+      "ask": 1076.00,
+      "bidQty": 200,
+      "askQty": 180
+    },
+    "ohlc": {
+      "open": 1084.25,
+      "high": 1087.50,
+      "low": 1072.00,
+      "close": 1084.25
+    },
+    "marketCap": 3300000000000,
+    "pe": 12.8,
+    "sector": "Banking"
+  },
+  {
+    "symbol": "MARUTI",
+    "ltp": 10450.25,
+    "change": 85.75,
+    "volume": 456789,
+    "bidAsk": {
+      "bid": 10450.00,
+      "ask": 10450.50,
+      "bidQty": 25,
+      "askQty": 30
+    },
+    "ohlc": {
+      "open": 10364.50,
+      "high": 10465.00,
+      "low": 10355.00,
+      "close": 10364.50
+    },
+    "marketCap": 3150000000000,
+    "pe": 27.5,
+    "sector": "Automotive"
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "ltp": 895.60,
+    "change": 3.25,
+    "volume": 5432109,
+    "bidAsk": {
+      "bid": 895.40,
+      "ask": 895.80,
+      "bidQty": 500,
+      "askQty": 450
+    },
+    "ohlc": {
+      "open": 892.35,
+      "high": 898.50,
+      "low": 890.00,
+      "close": 892.35
+    },
+    "marketCap": 5250000000000,
+    "pe": 18.2,
+    "sector": "Telecom"
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "ltp": 3125.40,
+    "change": -22.60,
+    "volume": 789012,
+    "bidAsk": {
+      "bid": 3125.20,
+      "ask": 3125.60,
+      "bidQty": 60,
+      "askQty": 70
+    },
+    "ohlc": {
+      "open": 3148.00,
+      "high": 3152.50,
+      "low": 3120.00,
+      "close": 3148.00
+    },
+    "marketCap": 3000000000000,
+    "pe": 45.2,
+    "sector": "Paints"
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "ltp": 6789.25,
+    "change": 45.80,
+    "volume": 321098,
+    "bidAsk": {
+      "bid": 6789.00,
+      "ask": 6789.50,
+      "bidQty": 40,
+      "askQty": 35
+    },
+    "ohlc": {
+      "open": 6743.45,
+      "high": 6795.00,
+      "low": 6735.00,
+      "close": 6743.45
+    },
+    "marketCap": 4200000000000,
+    "pe": 22.8,
+    "sector": "NBFC"
+  },
+  {
+    "symbol": "NESTLEIND",
+    "ltp": 22450.75,
+    "change": 125.50,
+    "volume": 98765,
+    "bidAsk": {
+      "bid": 22450.50,
+      "ask": 22451.00,
+      "bidQty": 10,
+      "askQty": 15
+    },
+    "ohlc": {
+      "open": 22325.25,
+      "high": 22475.00,
+      "low": 22310.00,
+      "close": 22325.25
+    },
+    "marketCap": 2160000000000,
+    "pe": 58.5,
+    "sector": "FMCG"
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "ltp": 2685.90,
+    "change": -12.35,
+    "volume": 1543210,
+    "bidAsk": {
+      "bid": 2685.70,
+      "ask": 2686.10,
+      "bidQty": 100,
+      "askQty": 85
+    },
+    "ohlc": {
+      "open": 2698.25,
+      "high": 2705.00,
+      "low": 2680.00,
+      "close": 2698.25
+    },
+    "marketCap": 6300000000000,
+    "pe": 62.1,
+    "sector": "FMCG"
+  }
+]

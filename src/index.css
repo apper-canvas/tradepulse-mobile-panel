@@ -1,0 +1,97 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-white text-surface-900 font-sans;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      font-size: 14px;
+    }
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gradient-profit {
+    background: linear-gradient(135deg, #00D09C 0%, #00B885 100%);
+  }
+  
+  .gradient-loss {
+    background: linear-gradient(135deg, #EB5B3C 0%, #D44A2A 100%);
+  }
+  
+  .glass-morphism {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .price-up {
+    @apply text-secondary;
+    animation: priceFlash 0.3s ease-in-out;
+  }
+  
+  .price-down {
+    @apply text-loss;
+    animation: priceFlash 0.3s ease-in-out;
+  }
+  
+  @keyframes priceFlash {
+    0% { background-color: transparent; }
+    50% { background-color: rgba(0, 208, 156, 0.1); }
+    100% { background-color: transparent; }
+  }
+  
+  .trade-success {
+    animation: successPulse 0.6s ease-in-out;
+  }
+  
+  @keyframes successPulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 208, 156, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 208, 156, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 208, 156, 0); }
+  }
+}
+
+/* Custom Toastify Theme */
+.Toastify__toast {
+  @apply rounded-xl font-medium;
+}
+
+.Toastify__toast--success {
+  @apply bg-secondary text-white;
+}
+
+.Toastify__toast--error {
+  @apply bg-loss text-white;
+}
+
+.Toastify__toast--warning {
+  @apply bg-accent text-surface-900;
+}

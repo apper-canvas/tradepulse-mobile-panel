@@ -1,0 +1,37 @@
+[
+  {
+    "userId": 1,
+    "email": "trader@tradepulse.com",
+    "name": "Alex Kumar",
+    "kycStatus": "VERIFIED",
+    "accountType": "PREMIUM",
+    "tradingSegments": ["EQUITY", "DERIVATIVES", "COMMODITY", "CURRENCY"],
+    "phoneNumber": "+91-9876543210",
+    "panNumber": "ABCDE1234F",
+    "bankAccounts": [
+      {
+        "accountNumber": "1234567890",
+        "bankName": "HDFC Bank",
+        "ifscCode": "HDFC0001234",
+        "isPrimary": true
+      }
+    ],
+    "preferences": {
+      "language": "English",
+      "theme": "light",
+      "notifications": {
+        "email": true,
+        "sms": true,
+        "push": true
+      },
+      "defaultOrderType": "MARKET",
+      "confirmOrders": true
+    },
+    "riskProfile": "MODERATE",
+    "annualIncome": "10-25 Lakhs",
+    "experience": "5+ years",
+    "createdAt": "2023-01-15T00:00:00.000Z",
+    "lastLogin": "2023-12-28T10:00:00.000Z",
+    "isActive": true
+  }
+]
