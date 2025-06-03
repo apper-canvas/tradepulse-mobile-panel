@@ -385,6 +385,28 @@ if (loading) {
                   {type}
                 </button>
               ))}
+</div>
+
+            {/* Stock Selection */}
+            <div>
+              <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+                Select Stock
+              </label>
+              <select
+                value={selectedStock?.symbol || ''}
+                onChange={(e) => {
+                  const stock = marketData.find(s => s.symbol === e.target.value)
+                  handleStockSelect(stock)
+                }}
+                className="w-full px-3 py-2 border border-surface-300 dark:border-surface-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-surface-700 dark:text-white"
+              >
+                <option value="">Choose a stock...</option>
+                {marketData?.map((stock) => (
+                  <option key={stock.symbol} value={stock.symbol}>
+                    {stock.symbol} - ₹{stock.ltp}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Trade Type */}
