@@ -140,9 +140,11 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Main Content */}
+{/* Main Content */}
           <div className="lg:col-span-9">
-            <MainFeature />
+            <div className="main-features-section">
+              <MainFeature />
+            </div>
             
             {/* Portfolio Summary */}
             {portfolioData && (
