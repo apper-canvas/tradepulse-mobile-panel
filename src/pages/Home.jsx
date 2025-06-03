@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import MainFeature from '../components/MainFeature'
 import ApperIcon from '../components/ApperIcon'
 import { portfolioService } from '../services'
 import { motion } from 'framer-motion'
-
 const Home = () => {
   const [portfolioData, setPortfolioData] = useState(null)
   const [loading, setLoading] = useState(false)
