@@ -108,7 +108,7 @@ const MainFeature = () => {
     return orderPrice * parseInt(quantity) * (orderType === 'BUY' ? 1 : 0.2)
   }
 
-  if (loading) {
+if (loading) {
     return (
       <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700 p-6">
         <div className="animate-pulse space-y-4">
@@ -124,10 +124,9 @@ const MainFeature = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:gap-6">
       {/* Watchlist & Market Data */}
-      <div className="xl:col-span-2">
-        <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700">
+      <div className="xl:col-span-2 bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700">
           {/* Tabs */}
           <div className="border-b border-surface-200 dark:border-surface-700">
             <nav className="flex space-x-8 px-6">
@@ -152,36 +151,66 @@ const MainFeature = () => {
             </nav>
           </div>
 
-          {/* Tab Content */}
-          <div className="p-6">
-            <AnimatePresence mode="wait">
-              {activeTab === 'watchlist' && (
-                <motion.div
-                  key="watchlist"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className="space-y-2"
-                >
-                  <div className="grid grid-cols-5 gap-4 pb-2 text-xs font-medium text-surface-500 dark:text-surface-400 uppercase tracking-wider">
-                    <div>Symbol</div>
-                    <div className="text-right">LTP</div>
-                    <div className="text-right">Change</div>
-                    <div className="text-right">Volume</div>
-                    <div className="text-center">Action</div>
-                  </div>
-                  
-                  {marketData?.map((stock, index) => (
-                    <motion.div
-                      key={stock.symbol}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      className={`grid grid-cols-5 gap-4 p-3 rounded-lg transition-all duration-200 cursor-pointer group hover:bg-surface-50 dark:hover:bg-surface-700 ${
-                        selectedStock?.symbol === stock.symbol ? 'bg-primary/5 border border-primary/20' : ''
-                      }`}
-                      onClick={() => handleStockSelect(stock)}
-                    >
+{/* Tab Content */}
+        <div className="p-3 sm:p-6">
+          <AnimatePresence mode="wait">
+            {activeTab === 'watchlist' && (
+              <motion.div
+                key="watchlist"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="space-y-2"
+              >
+                {/* Desktop Table Header */}
+                <div className="hidden md:grid grid-cols-5 gap-4 pb-2 text-xs font-medium text-surface-500 dark:text-surface-400 uppercase tracking-wider">
+                  <div>Symbol</div>
+                  <div className="text-right">LTP</div>
+                  <div className="text-right">Change</div>
+                  <div className="text-right">Volume</div>
+                  <div className="text-center">Action</div>
+                </div>
+                
+{marketData?.map((stock, index) => (
+                  <motion.div
+                    key={stock.symbol}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className={`p-3 rounded-lg transition-all duration-200 cursor-pointer group hover:bg-surface-50 dark:hover:bg-surface-700 ${
+                      selectedStock?.symbol === stock.symbol ? 'bg-primary/5 border border-primary/20' : ''
+                    }`}
+                    onClick={() => handleStockSelect(stock)}
+                  >
+                    {/* Mobile Card Layout */}
+                    <div className="md:hidden space-y-2">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-medium text-surface-900 dark:text-white">{stock.symbol}</p>
+                          <p className="text-xs text-surface-500 dark:text-surface-400">NSE</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-semibold text-surface-900 dark:text-white">₹{stock.ltp}</p>
+                          <p className={`text-xs font-medium ${stock.change >= 0 ? 'text-secondary' : 'text-loss'}`}>
+                            {stock.change >= 0 ? '+' : ''}₹{stock.change} ({((stock.change / (stock.ltp - stock.change)) * 100).toFixed(2)}%)
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-surface-500 dark:text-surface-400">Vol: {stock.volume?.toLocaleString()}</span>
+                        <div className="flex space-x-1">
+                          <button className="p-1 rounded bg-secondary/10 text-secondary hover:bg-secondary/20 transition-colors">
+                            <ApperIcon name="TrendingUp" className="h-3 w-3" />
+                          </button>
+                          <button className="p-1 rounded bg-loss/10 text-loss hover:bg-loss/20 transition-colors">
+                            <ApperIcon name="TrendingDown" className="h-3 w-3" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop Grid Layout */}
+                    <div className="hidden md:grid grid-cols-5 gap-4">
                       <div>
                         <p className="font-medium text-surface-900 dark:text-white">{stock.symbol}</p>
                         <p className="text-xs text-surface-500 dark:text-surface-400">NSE</p>
@@ -212,12 +241,13 @@ const MainFeature = () => {
                           <ApperIcon name="TrendingDown" className="h-3 w-3" />
                         </button>
                       </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
 
-              {activeTab === 'orders' && (
+            {activeTab === 'orders' && (
                 <motion.div
                   key="orders"
                   initial={{ opacity: 0, y: 20 }}
@@ -229,26 +259,56 @@ const MainFeature = () => {
                     <div className="text-center py-8">
                       <ApperIcon name="FileText" className="h-12 w-12 text-surface-300 mx-auto mb-4" />
                       <p className="text-surface-500 dark:text-surface-400">No orders placed yet</p>
+</div>
+                ) : (
+                  <div className="space-y-2">
+                    {/* Desktop Orders Header */}
+                    <div className="hidden md:grid grid-cols-6 gap-4 pb-2 text-xs font-medium text-surface-500 dark:text-surface-400 uppercase tracking-wider">
+                      <div>Symbol</div>
+                      <div>Type</div>
+                      <div className="text-right">Qty</div>
+                      <div className="text-right">Price</div>
+                      <div className="text-center">Status</div>
+                      <div className="text-center">Time</div>
                     </div>
-                  ) : (
-                    <div className="space-y-2">
-                      <div className="grid grid-cols-6 gap-4 pb-2 text-xs font-medium text-surface-500 dark:text-surface-400 uppercase tracking-wider">
-                        <div>Symbol</div>
-                        <div>Type</div>
-                        <div className="text-right">Qty</div>
-                        <div className="text-right">Price</div>
-                        <div className="text-center">Status</div>
-                        <div className="text-center">Time</div>
-                      </div>
-                      
-                      {orders.map((order, index) => (
-                        <motion.div
-                          key={order.orderId}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.05 }}
-                          className="grid grid-cols-6 gap-4 p-3 rounded-lg bg-surface-50 dark:bg-surface-700"
-                        >
+                    
+{orders.map((order, index) => (
+                      <motion.div
+                        key={order.orderId}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="p-3 rounded-lg bg-surface-50 dark:bg-surface-700"
+                      >
+                        {/* Mobile Order Card */}
+                        <div className="md:hidden space-y-2">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <p className="font-medium text-surface-900 dark:text-white">{order.symbol}</p>
+                              <p className={`text-sm font-medium ${order.orderType === 'BUY' ? 'text-secondary' : 'text-loss'}`}>
+                                {order.orderType} • Qty: {order.quantity}
+                              </p>
+                            </div>
+                            <div className="text-right">
+                              <p className="font-medium text-surface-900 dark:text-white">₹{order.price}</p>
+                              <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
+                                order.status === 'EXECUTED' 
+                                  ? 'bg-secondary/10 text-secondary' 
+                                  : order.status === 'PENDING'
+                                  ? 'bg-accent/10 text-accent'
+                                  : 'bg-loss/10 text-loss'
+                              }`}>
+                                {order.status}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="text-xs text-surface-500 dark:text-surface-400">
+                            {new Date(order.timestamp).toLocaleTimeString()}
+                          </div>
+                        </div>
+
+                        {/* Desktop Order Grid */}
+                        <div className="hidden md:grid grid-cols-6 gap-4">
                           <div className="font-medium text-surface-900 dark:text-white">{order.symbol}</div>
                           <div className={`text-sm font-medium ${order.orderType === 'BUY' ? 'text-secondary' : 'text-loss'}`}>
                             {order.orderType}
@@ -269,30 +329,31 @@ const MainFeature = () => {
                           <div className="text-center text-xs text-surface-500 dark:text-surface-400">
                             {new Date(order.timestamp).toLocaleTimeString()}
                           </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  )}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
                 </motion.div>
               )}
-            </AnimatePresence>
+</AnimatePresence>
           </div>
         </div>
       </div>
 
       {/* Order Entry Panel */}
-      <div className="space-y-6">
+      <div className="space-y-4 lg:space-y-6">
         <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700">
-          <div className="p-6 border-b border-surface-200 dark:border-surface-700">
+          <div className="p-4 sm:p-6 border-b border-surface-200 dark:border-surface-700">
             <h3 className="text-lg font-semibold text-surface-900 dark:text-white">Place Order</h3>
             {selectedStock && (
               <p className="text-sm text-surface-600 dark:text-surface-400 mt-1">
                 {selectedStock.symbol} • ₹{selectedStock.ltp}
               </p>
-            )}
+)}
           </div>
 
-          <div className="p-6 space-y-4">
+          <div className="p-4 sm:p-6 space-y-4">
             {/* Order Type Tabs */}
             <div className="flex rounded-lg bg-surface-100 dark:bg-surface-700 p-1">
               {['BUY', 'SELL'].map((type) => (
@@ -422,10 +483,10 @@ const MainFeature = () => {
               )}
             </motion.button>
           </div>
-        </div>
+</div>
 
         {/* Chart Timeframes */}
-        <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700 p-6">
+        <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card border border-surface-200 dark:border-surface-700 p-4 sm:p-6">
           <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-4">Chart View</h3>
           <div className="grid grid-cols-4 gap-2 mb-4">
             {['1m', '5m', '1H', '1D'].map((timeframe) => (
@@ -442,22 +503,22 @@ const MainFeature = () => {
               </button>
             ))}
           </div>
+</div>
           
           {selectedStock ? (
-            <div className="aspect-video bg-surface-50 dark:bg-surface-700 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <ApperIcon name="BarChart3" className="h-12 w-12 text-surface-300 mx-auto mb-2" />
-                <p className="text-surface-500 dark:text-surface-400">
+            <div className="aspect-video bg-surface-50 dark:bg-surface-700 rounded-lg flex items-center justify-center overflow-hidden">
+              <div className="text-center p-4">
+                <ApperIcon name="BarChart3" className="h-8 w-8 sm:h-12 sm:w-12 text-surface-300 mx-auto mb-2" />
+                <p className="text-sm sm:text-base text-surface-500 dark:text-surface-400">
                   Chart for {selectedStock.symbol}
-                </p>
                 <p className="text-xs text-surface-400 dark:text-surface-500">
                   Timeframe: {selectedTimeframe}
                 </p>
               </div>
-            </div>
+</div>
           ) : (
-            <div className="aspect-video bg-surface-50 dark:bg-surface-700 rounded-lg flex items-center justify-center">
-              <p className="text-surface-500 dark:text-surface-400">Select a stock to view chart</p>
+            <div className="aspect-video bg-surface-50 dark:bg-surface-700 rounded-lg flex items-center justify-center overflow-hidden">
+              <p className="text-sm sm:text-base text-surface-500 dark:text-surface-400 text-center p-4">Select a stock to view chart</p>
             </div>
           )}
         </div>
