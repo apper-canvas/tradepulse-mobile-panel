@@ -101,23 +101,26 @@ const Home = () => {
               <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-4">Market Overview</h3>
               <div className="space-y-3">
                 {[
-                  { name: 'NIFTY 50', value: '19,674.25', change: '+0.87%', positive: true },
+{ name: 'NIFTY 50', value: '19,674.25', change: '+0.87%', positive: true },
                   { name: 'SENSEX', value: '65,930.77', change: '+1.12%', positive: true },
                   { name: 'BANK NIFTY', value: '44,156.80', change: '-0.34%', positive: false }
-                ].map((index, i) => (
+                ].map((item, i) => (
                   <motion.div 
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex justify-between items-center p-3 rounded-lg bg-surface-50 dark:bg-surface-700 hover:bg-surface-100 dark:hover:bg-surface-600 transition-colors"
+className="flex justify-between items-center p-3 rounded-lg bg-surface-50 dark:bg-surface-700 hover:bg-surface-100 dark:hover:bg-surface-600 transition-colors"
                   >
                     <div>
-                      <p className="font-medium text-surface-900 dark:text-white">{index.name}</p>
-                      <p className="text-sm text-surface-600 dark:text-surface-300">{index.value}</p>
+                      <p className="font-medium text-surface-900 dark:text-white">{item.name}</p>
+                      <p className="text-sm text-surface-600 dark:text-surface-300">{item.value}</p>
                     </div>
-                    <span className={`text-sm font-medium ${index.positive ? 'text-secondary' : 'text-loss'}`}>
-                      {index.change}
+                    <span className={`text-sm font-medium ${item.positive ? 'text-secondary' : 'text-loss'}`}>
+<p className="text-sm text-surface-600 dark:text-surface-300">{item.value}</p>
+                    </div>
+                    <span className={`text-sm font-medium ${item.positive ? 'text-secondary' : 'text-loss'}`}>
+                      {item.change}
                     </span>
                   </motion.div>
                 ))}
