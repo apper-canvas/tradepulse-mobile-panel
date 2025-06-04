@@ -112,12 +112,9 @@ const Home = () => {
                     transition={{ delay: i * 0.1 }}
 className="flex justify-between items-center p-3 rounded-lg bg-surface-50 dark:bg-surface-700 hover:bg-surface-100 dark:hover:bg-surface-600 transition-colors"
                   >
-                    <div>
+<div>
                       <p className="font-medium text-surface-900 dark:text-white">{item.name}</p>
                       <p className="text-sm text-surface-600 dark:text-surface-300">{item.value}</p>
-                    </div>
-                    <span className={`text-sm font-medium ${item.positive ? 'text-secondary' : 'text-loss'}`}>
-<p className="text-sm text-surface-600 dark:text-surface-300">{item.value}</p>
                     </div>
                     <span className={`text-sm font-medium ${item.positive ? 'text-secondary' : 'text-loss'}`}>
                       {item.change}
