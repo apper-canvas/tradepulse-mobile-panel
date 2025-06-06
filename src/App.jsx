@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
+import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
-
 function App() {
   return (
 <div className="App">
